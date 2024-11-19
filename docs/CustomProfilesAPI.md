@@ -241,7 +241,7 @@ import (
 )
 
 func main() {
-	page := "1" // string | Optional page number (when results exceed pagination threshold) (optional)
+	page := "1" // string | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -266,7 +266,7 @@ Other parameters are passed through a pointer to a apiListCustomProfilesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **string** | Optional page number (when results exceed pagination threshold) | 
+ **page** | **string** | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. | 
 
 ### Return type
 

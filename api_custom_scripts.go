@@ -346,7 +346,7 @@ type ApiListCustomScriptsRequest struct {
 	page *string
 }
 
-// Optional page number (when results exceed pagination threshold)
+// Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.
 func (r ApiListCustomScriptsRequest) Page(page string) ApiListCustomScriptsRequest {
 	r.page = &page
 	return r

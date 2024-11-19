@@ -10440,7 +10440,8 @@ paths:
         url: https://api-docs.kandji.io/#6ab7e166-e758-454f-b43e-200537097a92
       operationId: listCustomProfiles
       parameters:
-      - description: Optional page number (when results exceed pagination threshold)
+      - description: Optional page number. Used when results exceed pagination threshold.
+          A hard upper limit is set at 300 device records returned per request.
         example: "1"
         explode: true
         in: query
@@ -11211,7 +11212,8 @@ paths:
         url: https://api-docs.kandji.io/#6c8acf81-96fd-4859-a508-e191d632ce64
       operationId: listCustomScripts
       parameters:
-      - description: Optional page number (when results exceed pagination threshold)
+      - description: Optional page number. Used when results exceed pagination threshold.
+          A hard upper limit is set at 300 device records returned per request.
         example: "1"
         explode: true
         in: query
