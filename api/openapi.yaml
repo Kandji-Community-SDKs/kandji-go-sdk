@@ -3874,24 +3874,6 @@ paths:
         schema:
           type: string
         style: simple
-      - description: ""
-        example: "Bearer {{API TOKEN}}"
-        explode: false
-        in: header
-        name: Authorization
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: ""
-        example: application/json
-        explode: false
-        in: header
-        name: Content-Type
-        required: true
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:

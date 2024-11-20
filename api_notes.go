@@ -456,21 +456,7 @@ type ApiUpdateDeviceNoteRequest struct {
 	ApiService *NotesAPIService
 	deviceId string
 	noteId string
-	authorization *string
-	contentType *string
 	body *string
-}
-
-// 
-func (r ApiUpdateDeviceNoteRequest) Authorization(authorization string) ApiUpdateDeviceNoteRequest {
-	r.authorization = &authorization
-	return r
-}
-
-// 
-func (r ApiUpdateDeviceNoteRequest) ContentType(contentType string) ApiUpdateDeviceNoteRequest {
-	r.contentType = &contentType
-	return r
 }
 
 func (r ApiUpdateDeviceNoteRequest) Body(body string) ApiUpdateDeviceNoteRequest {
@@ -523,12 +509,6 @@ func (a *NotesAPIService) UpdateDeviceNoteExecute(r ApiUpdateDeviceNoteRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.authorization == nil {
-		return localVarReturnValue, nil, reportError("authorization is required and must be specified")
-	}
-	if r.contentType == nil {
-		return localVarReturnValue, nil, reportError("contentType is required and must be specified")
-	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -547,8 +527,6 @@ func (a *NotesAPIService) UpdateDeviceNoteExecute(r ApiUpdateDeviceNoteRequest) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "Authorization", r.authorization, "simple", "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Type", r.contentType, "simple", "")
 	// body params
 	localVarPostBody = r.body
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

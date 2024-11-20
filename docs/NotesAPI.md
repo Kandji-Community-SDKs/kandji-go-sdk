@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDeviceNote
 
-> map[string]interface{} UpdateDeviceNote(ctx, deviceId, noteId).Authorization(authorization).ContentType(contentType).Body(body).Execute()
+> map[string]interface{} UpdateDeviceNote(ctx, deviceId, noteId).Body(body).Execute()
 
 Update Device Note
 
@@ -323,13 +323,11 @@ import (
 func main() {
 	deviceId := "deviceId_example" // string | 
 	noteId := "noteId_example" // string | 
-	authorization := "Bearer {{API TOKEN}}" // string | 
-	contentType := "application/json" // string | 
 	body := "body_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NotesAPI.UpdateDeviceNote(context.Background(), deviceId, noteId).Authorization(authorization).ContentType(contentType).Body(body).Execute()
+	resp, r, err := apiClient.NotesAPI.UpdateDeviceNote(context.Background(), deviceId, noteId).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NotesAPI.UpdateDeviceNote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,8 +355,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **authorization** | **string** |  | 
- **contentType** | **string** |  | 
  **body** | **string** |  | 
 
 ### Return type
